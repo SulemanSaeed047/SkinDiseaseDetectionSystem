@@ -12,7 +12,7 @@ def home(request):
 @csrf_exempt
 def submit(request):
     if request.method == "POST":
-        return render(request,'index.html')
+        return render(request,'result.html')
     
 @csrf_exempt
 def logout(request):
