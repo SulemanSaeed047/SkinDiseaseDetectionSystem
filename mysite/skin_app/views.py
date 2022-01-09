@@ -1,5 +1,3 @@
-import os
-import easygui
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
@@ -9,11 +7,12 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def home(request):
     if request.method == "GET":
-        return render(request,'signup.html')
+        return render(request,'index.html')
     
 @csrf_exempt
 def submit(request):
     if request.method == "POST":
+<<<<<<< HEAD
         return render(request,'result.html')
 <<<<<<< HEAD
     
@@ -73,16 +72,11 @@ def login(request):
             return redirect('http://127.0.0.1:8000')
 =======
 >>>>>>> d94205b50e744f526a0a4de5f9f5d7bb3aca9623
+=======
+        return render(request,'index.html')
+>>>>>>> parent of b42960a (BackEnd working of Signup and Result pages)
     
 @csrf_exempt
 def logout(request):
     if request.method == 'GET':
         return redirect('http://127.0.0.1:8000')    
-    
-@csrf_exempt
-def dashboard(request):
-    if request.method == 'GET':
-        f = open(os.path.dirname(__file__)+"/session.txt","r+")
-        name = f.read()
-        f.close()
-        return render(request,'index.html',{"name":name})
