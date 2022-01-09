@@ -15,6 +15,7 @@ def home(request):
 def submit(request):
     if request.method == "POST":
         return render(request,'result.html')
+<<<<<<< HEAD
     
 @csrf_exempt
 def signup(request):
@@ -70,6 +71,8 @@ def login(request):
         else:
             easygui.msgbox("Incorrect Username or password", title="Error")
             return redirect('http://127.0.0.1:8000')
+=======
+>>>>>>> d94205b50e744f526a0a4de5f9f5d7bb3aca9623
     
 @csrf_exempt
 def logout(request):
