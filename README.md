@@ -25,7 +25,6 @@ Install Visual Studio Code \
 Install important extensions in VS code i.e. Python, Pylance, Jupyter, Open in Browser \
 Use python interpreter 3.9.7 with project environment  \
 Install Django and easygui from your VS code’s own terminal \
-Create a new web project named Skin Disease Detection System \
 Pull the project from this Github repository in your VS code environment. \
 Install the dataset from https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000 \
 Place the dataset and change the path of your dataset in your code according to its location \
