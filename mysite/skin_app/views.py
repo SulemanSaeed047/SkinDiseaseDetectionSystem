@@ -33,12 +33,21 @@ def signup(request):
             easygui.msgbox("The two password does not match", title="Error")
             return redirect('http://127.0.0.1:8000')
         else:
-            print("inside database")
-            file = open(os.path.dirname(__file__)+'/database.csv','a')
-            file.write(fullname+","+email+","+password+"\n")
-            file.close()
-            print("done writing")
-            return redirect('http://127.0.0.1:8000')
+            with open(os.path.dirname(__file__)+'/database.csv','r') as file:
+                for line in file:
+                    line = line.rstrip()
+                    line = line.split(",")
+                    print(line)
+                    if line[1] == email:
+                        easygui.msgbox("Email Already Exists", title="Error")
+                        return redirect('http://127.0.0.1:8000')
+                    else:
+                        print("inside database")
+                        file = open(os.path.dirname(__file__)+'/database.csv','a')
+                        file.write(fullname+","+email+","+password+"\n")
+                        file.close()
+                        print("done writing")
+                        return redirect('http://127.0.0.1:8000')
 
 @csrf_exempt
 def login(request):
