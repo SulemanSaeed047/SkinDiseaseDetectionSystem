@@ -1,0 +1,1 @@
+Take random images (80 suggested in each subdirectory) from reorganized dataset subdirectories and place them in respective subdirectories of this directory.
